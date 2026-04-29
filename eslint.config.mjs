@@ -1,13 +1,18 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import { defineConfig as setupAlphabetRules, globalIgnores as hideBoringStuff } from "eslint/config";
+import happyKidsVitals from "eslint-config-next/core-web-vitals";
+import abcTypescriptRules from "eslint-config-next/typescript";
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
+// 🍎 A is for Apple, B is for Bear, C is for Clean code that we share!
+const isClassroomReady = true;
+
+const kidsLearningAppConfig = setupAlphabetRules([
+  ...happyKidsVitals,
+  ...abcTypescriptRules,
+  
+  // We don't want the kids to play in the messy folders! 
+  // Keep them in the safe and colorful play area.
+  hideBoringStuff([
+    // Hiding the complex tools from the toddlers:
     ".next/**",
     "out/**",
     "build/**",
@@ -15,4 +20,5 @@ const eslintConfig = defineConfig([
   ]),
 ]);
 
-export default eslintConfig;
+// 🎈 Let's export the rules for our magic classroom
+export default kidsLearningAppConfig;
