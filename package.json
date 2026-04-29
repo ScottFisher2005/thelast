@@ -1,12 +1,16 @@
 {
-  "name": "thelast",
+  "name": "kids-abc-learning",
   "version": "0.1.1",
   "private": true,
+  "description": "A fun and interactive magical alphabet learning adventure for toddlers and kids! 🌟",
+  "author": "Magic Kindergarten Teacher",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sing:abc": "echo 'A B C D E F G...'",
+    "play:game": "echo 'Starting the magic alphabet game...'"
   },
   "dependencies": {
     "next": "16.2.4",
